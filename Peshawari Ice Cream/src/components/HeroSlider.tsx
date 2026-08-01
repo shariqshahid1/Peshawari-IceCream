@@ -76,7 +76,7 @@ export default function HeroSlider() {
         <p className="text-tertiary-fixed-dim font-label-lg text-label-lg tracking-[0.2em] mb-6 uppercase">
           Est. 1948
         </p>
-        <h1 className="text-white font-display-lg-mobile md:text-display-lg md:font-display-lg leading-tight mb-8">
+        <h1 className="text-on-surface font-display-lg-mobile md:text-display-lg md:font-display-lg leading-tight mb-8">
           Since 1948, Crafting Karachi&apos;s Most Loved Ice Cream.
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
