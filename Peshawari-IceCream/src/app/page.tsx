@@ -92,6 +92,50 @@ export default function Home() {
     <div>
       <HeroSlider />
 
+      {/* Signature Flavours - Horizontal Scroll */}
+      <section
+        className="bg-surface-container-low py-section-gap overflow-hidden"
+        id="specialities"
+      >
+        <FlavorScroller
+          header={
+            <div>
+              <span className="text-tertiary font-label-lg text-label-lg uppercase tracking-widest">
+                The Icons
+              </span>
+              <h2 className="font-headline-lg text-headline-lg text-on-surface mt-2">
+                Signature Flavours
+              </h2>
+            </div>
+          }
+        >
+          {signatureFlavours.map((flavour) => (
+            <div key={flavour.slug} className="min-w-[280px] md:min-w-[400px] group">
+              <div className="rounded-[24px] overflow-hidden aspect-square border border-primary/10 ambient-shadow mb-6 relative">
+                <Image
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  src={flavour.image}
+                  alt={flavour.name}
+                  width={400}
+                  height={400}
+                />
+                {flavour.tag && (
+                  <div className="absolute bottom-4 right-4 glass-panel px-4 py-2 rounded-full border border-white/30 text-primary font-label-lg">
+                    {flavour.tag}
+                  </div>
+                )}
+              </div>
+              <h3 className="font-headline-sm text-headline-sm text-on-surface">
+                {flavour.name}
+              </h3>
+              <p className="text-on-surface-variant font-body-md mt-2">
+                {flavour.tagline}
+              </p>
+            </div>
+          ))}
+        </FlavorScroller>
+      </section>
+
       {/* Heritage Story */}
       <section
         className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
@@ -176,49 +220,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Signature Flavours - Horizontal Scroll */}
-      <section
-        className="bg-surface-container-low py-section-gap overflow-hidden"
-        id="specialities"
-      >
-        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12 flex justify-between items-end">
-          <div>
-            <span className="text-tertiary font-label-lg text-label-lg uppercase tracking-widest">
-              The Icons
-            </span>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface mt-2">
-              Signature Flavours
-            </h2>
-          </div>
-          <FlavorScroller>
-            {signatureFlavours.map((flavour) => (
-              <div key={flavour.slug} className="min-w-[280px] md:min-w-[400px] group">
-                <div className="rounded-[24px] overflow-hidden aspect-square border border-primary/10 ambient-shadow mb-6 relative">
-                  <Image
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    src={flavour.image}
-                    alt={flavour.name}
-                    width={400}
-                    height={400}
-                  />
-                  {flavour.tag && (
-                    <div className="absolute bottom-4 right-4 glass-panel px-4 py-2 rounded-full border border-white/30 text-primary font-label-lg">
-                      {flavour.tag}
-                    </div>
-                  )}
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface">
-                  {flavour.name}
-                </h3>
-                <p className="text-on-surface-variant font-body-md mt-2">
-                  {flavour.tagline}
-                </p>
-              </div>
-            ))}
-          </FlavorScroller>
         </div>
       </section>
 

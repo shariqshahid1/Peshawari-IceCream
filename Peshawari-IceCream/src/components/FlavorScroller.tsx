@@ -3,7 +3,12 @@
 import { useRef } from "react";
 import Icon from "./Icon";
 
-export default function FlavorScroller({ children }: { children: React.ReactNode }) {
+type FlavorScrollerProps = {
+  header?: React.ReactNode;
+  children: React.ReactNode;
+};
+
+export default function FlavorScroller({ header, children }: FlavorScrollerProps) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: number) => {
@@ -12,23 +17,26 @@ export default function FlavorScroller({ children }: { children: React.ReactNode
 
   return (
     <>
-      <div className="flex gap-4 mb-2">
-        <button
-          className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-          onClick={() => scroll(-1)}
-          aria-label="Scroll left"
-        >
-          <Icon name="chevron_left" />
-        </button>
-        <button
-          className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-          onClick={() => scroll(1)}
-          aria-label="Scroll right"
-        >
-          <Icon name="chevron_right" />
-        </button>
+      <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-10 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
+        {header && <div>{header}</div>}
+        <div className="flex gap-4 shrink-0">
+          <button
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+            onClick={() => scroll(-1)}
+            aria-label="Scroll left"
+          >
+            <Icon name="chevron_left" />
+          </button>
+          <button
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+            onClick={() => scroll(1)}
+            aria-label="Scroll right"
+          >
+            <Icon name="chevron_right" />
+          </button>
+        </div>
       </div>
-      <div className="flex gap-8 overflow-x-auto px-margin-mobile md:px-margin-desktop pb-12 scroll-hide" ref={trackRef}>
+      <div className="flex gap-6 md:gap-8 overflow-x-auto px-margin-mobile md:px-margin-desktop pb-4 scroll-hide" ref={trackRef}>
         {children}
       </div>
     </>

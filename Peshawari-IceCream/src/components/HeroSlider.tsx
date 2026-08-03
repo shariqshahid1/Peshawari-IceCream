@@ -72,8 +72,8 @@ export default function HeroSlider() {
       ))}
       <div className="absolute inset-0 hero-gradient" />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <p className="text-tertiary-fixed-dim font-label-lg text-label-lg tracking-[0.2em] mb-6 uppercase">
+      <div className="relative z-10 text-center px-5 sm:px-6 max-w-4xl mx-auto">
+        <p className="text-tertiary font-label-lg text-base md:text-label-lg tracking-[0.25em] mb-5 uppercase">
           Est. 1948
         </p>
         <h1 className="text-on-surface font-display-lg-mobile md:text-display-lg md:font-display-lg leading-tight mb-8">
@@ -82,13 +82,13 @@ export default function HeroSlider() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/menu"
-            className="px-10 py-4 rounded-full bg-primary text-white font-label-lg text-label-lg hover:bg-primary/90 transition-all shadow-xl active:scale-95"
+            className="w-full sm:w-auto px-8 sm:px-10 py-4 rounded-full bg-primary text-white font-label-lg text-base md:text-label-lg hover:bg-primary/90 transition-all shadow-xl active:scale-95"
           >
             Explore Flavours
           </Link>
           <Link
             href="/menu"
-            className="px-10 py-4 rounded-full bg-white text-primary font-label-lg text-label-lg hover:bg-primary hover:text-white transition-all shadow-xl active:scale-95"
+            className="w-full sm:w-auto px-8 sm:px-10 py-4 rounded-full bg-white text-primary font-label-lg text-base md:text-label-lg hover:bg-primary hover:text-white transition-all shadow-xl active:scale-95"
           >
             Order Online
           </Link>
