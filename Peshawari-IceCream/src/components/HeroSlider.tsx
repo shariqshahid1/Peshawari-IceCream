@@ -73,7 +73,7 @@ export default function HeroSlider() {
       <div className="absolute inset-0 hero-gradient" />
 
       <div className="relative z-10 text-center px-5 sm:px-6 max-w-4xl mx-auto">
-        <p className="text-tertiary font-label-lg text-base md:text-label-lg tracking-[0.25em] mb-5 uppercase">
+        <p className="text-tertiary font-label-lg font-bold text-base md:text-label-lg tracking-[0.25em] mb-5 uppercase">
           Est. 1948
         </p>
         <h1 className="text-on-surface font-display-lg-mobile md:text-display-lg md:font-display-lg leading-tight mb-8">
